@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20/10 yêu thương - 10C</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Arial,sans-serif;color:#793653;
+  background:linear-gradient(135deg,#fff4f8,#ffd9e8,#fff7fb);
+}
+.page{display:none;min-height:100vh;padding:25px 16px}
+.page.active{display:flex;align-items:center;justify-content:center}
+#last.active{display:block}
+.card{
+  width:min(850px,100%);margin:auto;text-align:center;
+  padding:clamp(25px,6vw,55px);border-radius:28px;
+  background:#ffffffdf;box-shadow:0 12px 40px #bd477720;
+}
+h1{color:#c02f76;font-size:clamp(32px,6vw,58px);line-height:1.2}
+h2{color:#bd3478;text-align:center}
+p{line-height:1.8;font-size:17px}
+button,.btn{
+  display:inline-block;border:0;border-radius:30px;padding:14px 23px;
+  background:linear-gradient(135deg,#f47caf,#cc347c);
+  color:white;font-size:16px;font-weight:bold;cursor:pointer;
+  text-decoration:none;margin:8px;
+}
+button:hover,.btn:hover{filter:brightness(1.05);transform:translateY(-2px)}
+.qr{
+  display:inline-block;padding:12px;background:white;border:4px solid #f5b8d2;
+  border-radius:20px;margin:15px
+}
+#qr{width:220px;height:220px;display:block}
+.heart{
+  color:#f05298;font-size:160px;line-height:1;
+  text-shadow:0 10px 30px #e94f9150;
+  animation:beat 1.3s infinite
+}
+.music{background:#fff2f8;border-radius:20px;padding:20px;margin:25px auto;max-width:550px}
+.names{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.person{
+  padding:18px;background:#fff;border:1px solid #ffe0ec;
+  border-radius:16px;box-shadow:0 5px 15px #a9276310
+}
+.person h3{color:#bd3478;margin:0 0 8px}
+.person p{font-size:15px;margin:0}
+footer{text-align:center;padding:25px;color:#a76e89}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@media(max-width:550px){.names{grid-template-columns:1fr}.heart{font-size:125px}}
+</style>
+</head>
+
+<body>
+
+<!-- TRANG 1: MÃ QR -->
+<section id="qrPage" class="page active">
+  <main class="card">
+    <div style="font-size:38px">🌷 💗 🌸</div>
+    <p>HAPPY VIETNAMESE WOMEN'S DAY</p>
+    <h1>Quét mã QR để mở món quà 20/10 💌</h1>
+    <p>Một món quà nhỏ gửi đến tất cả các cô gái tuyệt vời của lớp 10C!</p>
+    <div class="qr"><canvas id="qr" width="220" height="220"></canvas></div>
+    <p>📱 Dùng camera điện thoại quét mã QR để mở lời chúc.</p>
+    <button onclick="showPage('heartPage')">💖 Xem lời chúc ngay</button>
+  </main>
+</section>
+
+<!-- TRANG 2: TRÁI TIM VÀ NHẠC -->
+<section id="heartPage" class="page">
+  <main class="card">
+    <div style="font-size:35px">🌸 HAPPY 20/10 🌸</div>
+    <div class="heart">♥</div>
+    <h1>Gửi các chị em 10C 💗</h1>
+    <p style="font-size:21px">
+      Chúc các bạn luôn vui vẻ, tự tin, hạnh phúc và rạng rỡ
+      theo cách riêng của mình. Mong rằng mỗi ngày đến lớp đều
+      có tiếng cười, tình bạn đẹp và những kỷ niệm đáng nhớ! 💐
+    </p>
+
+    <div class="music">
+      <h2>🎵 Một chút âm nhạc dành cho bạn</h2>
+      <p><b>Sandwich — MONO</b></p>
+      <p>Nhấn nút dưới đây để tìm và nghe bài hát trên YouTube.</p>
+      <a class="btn" href="https://www.youtube.com/results?search_query=MONO+Sandwich"
+         target="_blank" rel="noopener">▶ Nghe nhạc</a>
+      <p style="font-size:13px">Bạn cần nhấn phát nhạc thủ công nếu trình duyệt chặn tự phát.</p>
+    </div>
+
+    <button onclick="showPage('last')">💌 Đọc lời chúc dành riêng cho từng bạn</button>
+  </main>
+</section>
+
+<!-- TRANG 3: LỜI CHÚC RIÊNG -->
+<section id="last" class="page">
+  <main style="max-width:1100px;margin:auto">
+    <header class="card">
+      <div style="font-size:40px">💐 🌷 💗</div>
+      <h1>Chúc các bạn gái 10C có một ngày 20/10 thật vui vẻ!</h1>
+      <p>
+        Chúc các bạn luôn mạnh khỏe, bình an, tự tin và hạnh phúc.
+        Mong rằng các bạn luôn được yêu thương, trân trọng, có đủ
+        dũng khí theo đuổi ước mơ và luôn tìm thấy niềm vui trong
+        những điều giản dị. Chúc tuổi học trò của chúng ta có thật
+        nhiều tiếng cười, tình bạn chân thành và những kỷ niệm đẹp
+        sẽ còn được nhớ mãi về sau. Chúc mừng ngày 20/10! 💖
+      </p>
+    </header>
+
+    <h2 style="font-size:28px;margin-top:35px">
+      🌸 Gửi lời chúc đến từng bông hoa của 10C 🌸
+    </h2>
+
+    <div class="names" id="names"></div>
+
+    <div style="text-align:center;margin:30px">
+      <button onclick="showPage('qrPage')">↩ Trở về trang đầu</button>
+    </div>
+    <footer>Gửi tất cả yêu thương đến các bạn nữ lớp 10C 💗</footer>
+  </main>
+</section>
+
+<!-- Thư viện tạo mã QR -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<script>
+/*
+  QUAN TRỌNG:
+  Sau khi đăng GitHub Pages, thay URL bên dưới bằng đường link website thật.
+*/
+const WEBSITE_URL =
+  "https://TEN-TAI-KHOAN.github.io/TEN-REPOSITORY/";
+
+function showPage(id){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo(0,0);
+}
+
+// Tạo mã QR dẫn đến website
+if(window.QRious){
+  new QRious({
+    element:document.getElementById("qr"),
+    value:WEBSITE_URL,
+    size:440,
+    level:"H",
+    foreground:"#a92763",
+    background:"#ffffff"
+  });
+}else{
+  document.getElementById("qr").outerHTML =
+    '<p>Không tải được mã QR. Hãy kiểm tra kết nối mạng.</p>';
+}
+
+// Danh sách tên và lời chúc riêng
+const girls = [
+["Nguyễn Nhật Quỳnh Anh","Chúc bạn luôn rạng rỡ, tự tin và gặp nhiều may mắn. Mong mọi nỗ lực của bạn đều được đền đáp xứng đáng."],
+["Đỗ Ngọc Hải Anh","Chúc bạn luôn vui vẻ, học tập thuận lợi và có thật nhiều điều đáng yêu trong cuộc sống."],
+["Lê Quỳnh Anh","Chúc bạn luôn hạnh phúc, được yêu thương và có một ngày 20/10 thật ấm áp."],
+["Dương Quỳnh Anh","Chúc bạn luôn mạnh mẽ theo đuổi ước mơ và tự hào về những điều mình làm được."],
+["Nguyễn Lan Anh","Chúc bạn luôn tươi vui, bình an và gặp được những người bạn chân thành."],
+["Dương Minh Châu","Chúc bạn tỏa sáng theo cách riêng, học tốt và có thật nhiều kỷ niệm đẹp cùng 10C."],
+["Nguyễn Diệp Chi","Chúc bạn luôn tự tin, yêu đời và có đủ dũng khí thử sức với những điều mới mẻ."],
+["Nguyễn Vũ Khánh Chi","Chúc bạn luôn bình an, rạng rỡ và có một năm học thật đáng nhớ."],
+["Nguyễn Thùy Dương","Chúc bạn mỗi ngày đều có nhiều tiếng cười, học tập tiến bộ và luôn được yêu quý."],
+["Nguyễn Thanh Hà","Chúc bạn mạnh khỏe, tự tin vào bản thân và đạt được những mục tiêu mình đặt ra."],
+["Nguyễn Thúy Hằng","Chúc bạn có ngày 20/10 ngọt ngào, gặp nhiều may mắn và luôn hạnh phúc."],
+["Nguyễn Ngọc Liên","Chúc bạn luôn giữ nụ cười, học tập thật tốt và mỗi ngày đến lớp đều là một ngày vui."],
+["Trần Thùy Linh","Chúc bạn luôn bình an, tự tin và có thật nhiều kỷ niệm đẹp của tuổi học trò."],
+["Nguyễn Hoàng Ngân","Chúc bạn luôn rạng rỡ, học tập thuận lợi và chinh phục được những mục tiêu của mình."],
+["Nguyễn Thị Minh Ngọc","Chúc bạn luôn hạnh phúc, mạnh khỏe và được tiếp thêm động lực từ những người xung quanh."],
+["Đào Ngọc Quỳnh Như","Chúc bạn luôn vui tươi, tự tin và tự hào về những điều mình đạt được."],
+["Lê Uyển Như","Chúc bạn luôn bình an, gặp nhiều niềm vui và có cơ hội biến ước mơ thành hiện thực."],
+["Nguyễn Hà Phương (A)","Chúc bạn luôn tràn đầy năng lượng, tự tin thể hiện bản thân và gặp nhiều thành công."],
+["Nguyễn Hà Phương (B)","Chúc bạn luôn vui vẻ, may mắn và giữ vững niềm tin vào những điều mình yêu thích."],
+["Nguyễn Ngọc Kiều Trang","Chúc bạn luôn tươi tắn, hạnh phúc và có thật nhiều kỷ niệm đẹp cùng 10C."],
+["Trần Quỳnh Trang","Chúc bạn luôn tự tin, học tập tốt và được bao quanh bởi những tình bạn chân thành."],
+["Đào Kim Tuyến","Chúc bạn luôn kiên định với mục tiêu, lạc quan và gặp nhiều điều tốt lành."],
+["Trần Lê Thảo Uyên","Chúc bạn luôn rạng rỡ, vui khỏe và có nhiều trải nghiệm ý nghĩa cùng bạn bè."],
+["Dương Thị Thảo Vy","Chúc bạn luôn hạnh phúc, tự tin khám phá khả năng của mình và gặp nhiều may mắn."],
+["Trần Thảo Vy","Chúc bạn luôn bình an, vui vẻ và có một tuổi học trò thật đáng nhớ."]
+];
+
+const list = document.getElementById("names");
+girls.forEach(([name,wish])=>{
+  const article = document.createElement("article");
+  article.className = "person";
+  const title = document.createElement("h3");
+  title.textContent = "💗 " + name;
+  const text = document.createElement("p");
+  text.textContent = wish;
+  article.append(title,text);
+  list.appendChild(article);
+});
+</script>
+
+</body>
+</html>
